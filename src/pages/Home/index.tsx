@@ -1,11 +1,21 @@
 import React, {useState, useEffect} from 'react' // O useState é um exemplo de Hooks ( utilizar funções que conectão os recursos da Aplicação)
 import './styles.css'
-import { Card } from '../../components/Card'
+import { Card, CardProps } from '../../components/Card'
+
+interface ProfileResponse {
+  name?: string,
+  avatar_url: string;
+}
+
+interface User {
+  name?: string,
+  avatar: string;
+}
 
 export function Home() {
   const [studentName, setStudentName] = useState('');
-  const [ students, setStudents] = useState([])
-  const [user, setUser] = useState({avatar: ''})
+  const [ students, setStudents] = useState<CardProps[]>([])
+  const [user, setUser] = useState<User>({} as User)
 
   function handleAddStudent() {
     const newStudent = {
@@ -22,7 +32,7 @@ export function Home() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch('https://api.github.com/users/atilaCSilva')
-      const data = await response.json()
+      const data = await response.json() as ProfileResponse
       console.log("DADOS ===> ", data)
 
       setUser({

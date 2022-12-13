@@ -16,7 +16,7 @@ Nesse projeto eu uso oque aprendi no curso de introdução de React na plataform
 - NodeJS
 - Vite
 
-
+****
 ### ✍️ O que Aprendi!!
 Aprendi muito sobre React, praticamento toda base de como funciona e para que serve. 
 Vi sobre componentes, Como o react funciona com base no paradigma Funcional, sobre Estado, o princípio da imutabilidade e outros conceitos, que foram usados na prática desse simples projeto.
